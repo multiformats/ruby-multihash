@@ -22,14 +22,20 @@ Or install it yourself as:
 
 ## Usage
 
-This is a low-level library. Bring your own digest. Binary goes in, binary goes out. To compute a sha256 multihash that would work nicely with [IPFS](https://github.com/ipfs/ipfs):
+This is a low-level library. Bring your own digest. A binary digest goes in, a binary digest goes out. To compute a sha256 multihash that would work nicely with [IPFS](https://github.com/ipfs/ipfs):
 
 ```ruby
 require 'multihashes'
 require 'digest'
 
 digest = Digest::SHA256.digest 'Dade Murphy will never figure this one out'
-Multihashes.encode(digest, 'sha2-256')
+multihash\_binary\_string = Multihashes.encode digest, 'sha2-256'
+
+multihash_binary_string.unpack('H*').first # hex: "1220142711d38ca7a33c521841..."
+
+out = Multihashes.decode multihash\_binary\_string
+# => {:code=>18, :hash_function=>"sha2-256", :length=>32, :digest=>"\x14'\x11\xD3\x8C\xA7\xA3<R\x18Ao\x8F\xFC\xC6FH\xCAF\x16\xA6%\xB5\xE0\xA0\xAB=\xA1\x91\x1D]z"}
+
 ```
 
 Hash function names (latest is [here](https://github.com/jbenet/multihash/blob/master/hashtable.csv))
