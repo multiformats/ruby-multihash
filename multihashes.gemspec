@@ -9,9 +9,9 @@ Gem::Specification.new do |spec|
   spec.authors       = ["Kyle Drake"]
   spec.email         = ["kyle@kyledrake.net"]
 
-  spec.summary       = %q{TODO: Write a short summary, because Rubygems requires one.}
-  spec.description   = %q{TODO: Write a longer description or delete this line.}
-  spec.homepage      = "TODO: Put your gem's website or public repo URL here."
+  spec.summary       = %q{A simple multihash (https://github.com/jbenet/multihash) implementation for ruby.}
+  spec.description   = %q{A simple, low-level multihash (https://github.com/jbenet/multihash) implementation for ruby.}
+  spec.homepage      = "https://github.com/neocities/ruby-multihashes"
   spec.license       = "MIT"
 
   # Prevent pushing this gem to RubyGems.org by setting 'allowed_push_host', or
