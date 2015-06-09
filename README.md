@@ -1,5 +1,7 @@
 # Multihashes
 
+[![Build Status](https://travis-ci.org/neocities/ruby-multihash.svg)](https://travis-ci.org/neocities/ruby-multihash)
+
 A [Multihash](https://github.com/jbenet/multihash) implementation for ruby.
 
 A multihash is a digest with an embedded hash function code (and length) (['cause you never know](https://twitter.com/matthew_d_green/status/597409850381836288)). It was developed primarily for use with [IPFS](https://github.com/ipfs/ipfs), but is not specific to it.
