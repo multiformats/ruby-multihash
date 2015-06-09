@@ -29,11 +29,11 @@ require 'multihashes'
 require 'digest'
 
 digest = Digest::SHA256.digest 'Dade Murphy will never figure this one out'
-multihash\_binary\_string = Multihashes.encode digest, 'sha2-256'
+multihash_binary_string = Multihashes.encode digest, 'sha2-256'
 
 multihash_binary_string.unpack('H*').first # hex: "1220142711d38ca7a33c521841..."
 
-out = Multihashes.decode multihash\_binary\_string
+out = Multihashes.decode multihash_binary_string
 # => {:code=>18, :hash_function=>"sha2-256", :length=>32, :digest=>"\x14'\x11\xD3\x8C\xA7\xA3<R\x18Ao\x8F\xFC\xC6FH\xCAF\x16\xA6%\xB5\xE0\xA0\xAB=\xA1\x91\x1D]z"}
 
 ```
