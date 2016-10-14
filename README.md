@@ -1,12 +1,24 @@
-# Multihashes
+# ruby-multihash
 
-[![Build Status](https://travis-ci.org/neocities/ruby-multihash.svg)](https://travis-ci.org/neocities/ruby-multihash)
+[![](https://img.shields.io/badge/made%20by-Protocol%20Labs-blue.svg?style=flat-square)](http://ipn.io)
+[![](https://img.shields.io/badge/project-multiformats-blue.svg?style=flat-square)](http://github.com/multiformats/multiformats)
+[![](https://img.shields.io/badge/freenode-%23ipfs-blue.svg?style=flat-square)](http://webchat.freenode.net/?channels=%23ipfs)
+[![Build Status](https://travis-ci.org/multiformats/ruby-multihash.svg)](https://travis-ci.org/neocities/ruby-multihash)
 
-A [Multihash](https://github.com/multiformats/multihash) implementation for ruby.
+> A simple [multihash](https://github.com/multiformats/multihash) implementation for ruby.
 
 A multihash is a digest with an embedded hash function code (and length) (['cause you never know](https://twitter.com/matthew_d_green/status/597409850381836288)). It was developed primarily for use with [IPFS](https://github.com/ipfs/ipfs), but is not specific to it.
 
-## Installation
+## Table of Contents
+
+- [Install](#install)
+- [Usage](#usage)
+- [Development](#development)
+- [Maintainer](#maintainer)
+- [Contribute](#contribute)
+- [License](#license)
+
+## Install
 
 Add this line to your application's Gemfile:
 
@@ -58,9 +70,17 @@ After checking out the repo, run `bin/setup` to install dependencies. Then, run 
 
 To install this gem onto your local machine, run `bundle exec rake install`.
 
-## Contributing
+## Maintainer
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/neocities/multihashes.
+Captain: [@kyledrake](https://github.com/kyledrake).
+
+## Contribute
+
+Contributions welcome. Please check out [the issues](https://github.com/multiformats/ruby-multihash/issues).
+
+Check out our [contributing document](https://github.com/multiformats/multiformats/blob/master/contributing.md) for more information on how we work, and about contributing in general. Please be aware that all interactions related to multiformats are subject to the IPFS [Code of Conduct](https://github.com/ipfs/community/blob/master/code-of-conduct.md).
+
+Small note: If editing the README, please conform to the [standard-readme](https://github.com/RichardLitt/standard-readme) specification.
 
 ## License
 
