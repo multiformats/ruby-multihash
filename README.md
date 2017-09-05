@@ -47,6 +47,7 @@ out = Multihashes.decode multihash_binary_string
 Hash function names (latest is [here](https://github.com/multiformats/multihash/blob/master/hashtable.csv))
 
     code name
+    0xd5 md5
     0x11 sha1
     0x12 sha2-256
     0x13 sha2-512

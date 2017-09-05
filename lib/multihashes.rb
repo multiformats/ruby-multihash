@@ -6,6 +6,7 @@ module Multihashes
 
   # https://github.com/jbenet/multihash
   TABLE = {
+    0xd5 => 'md5',
     0x11 => 'sha1',
     0x12 => 'sha2-256',
     0x13 => 'sha2-512',
