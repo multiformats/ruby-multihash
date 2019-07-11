@@ -44,18 +44,61 @@ out = Multihashes.decode multihash_binary_string
 
 ```
 
-Hash function names (latest is [here](https://github.com/multiformats/multihash/blob/master/hashtable.csv))
+Hash function names (latest is [here](https://github.com/multiformats/multicodec/blob/master/table.csv), current `multicodec` is [here](https://github.com/SleeplessByte/ruby-multicodec/blob/master/lib/table.csv))
 
-    code name
-    0xd5 md5
-    0x11 sha1
-    0x12 sha2-256
-    0x13 sha2-512
-    0x14 sha3
-    0x40 blake2b
-    0x41 blake2s
-    # 0x00-0x0f reserved for application specific functions
-    # 0x10-0x3f reserved for SHA standard functions
+| code   | name           | comment |
+|--------|----------------|---------|
+| 0x00   | identity       | raw binary |
+| 0x11   | sha1           | |
+| 0x12   | sha2-256       | |
+| 0x13   | sha2-512       | |
+| 0x14   | sha3-512       | |
+| 0x15   | sha3-384       | |
+| 0x16   | sha3-256       | |
+| 0x17   | sha3-224       | |
+| 0x18   | shake-128      | |
+| 0x19   | shake-256      | |
+| 0x1a   | keccak-224     | `keccak` has variable output length. The number specifies the core length |
+| 0x1b   | keccak-256     | |
+| 0x1c   | keccak-384     | |
+| 0x1d   | keccak-512     | |
+| 0x22   | murmur3-128    | |
+| 0x23   | murmur3-32     | |
+| 0x56   | dbl-sha2-256   | |
+| 0xd4   | md4            | |
+| 0xd4   | md5            | |
+| 0xd6   | bmt            | Binary Merkle Tree Hash |
+| 0x1100 | x11            | |
+| 0xb201 | blake2b-8      | `blake2b` consists of 64 output lengths that give different hashes |
+| 0xb202 | blake2b-16     | |
+| 0xb203 | blake2b-24     | |
+| ...    |                | |
+| 0xb23f | blake2b-504    | |
+| 0xb240 | blake2b-512    | |
+| 0xb241 | blake2s-8      | `blake2s` consists of 32 output lengths that give different hashes |
+| 0xb242 | blake2s-16     | |
+| 0xb243 | blake2s-24     | |
+| ...    |                | |
+| 0xb25f | blake2s-248    | |
+| 0xb260 | blake2s-256    | |
+| 0xb301 | skein256-8     | `skein256` consists of 32 output lengths that give different hashes |
+| 0xb302 | skein256-16    | |
+| 0xb303 | skein256-24    | |
+| ...    |                | |
+| 0xb31f | skein256-248   | |
+| 0xb320 | skein256-256   | |
+| 0xb321 | skein512-8     | `skein256` consists of 32 output lengths that give different hashes |
+| 0xb322 | skein512-16    | |
+| 0xb323 | skein512-24    | |
+| ...    |                | |
+| 0xb35f | skein512-504   | |
+| 0xb360 | skein512-512   | |
+| 0xb361 | skein1024-8    | `skein1024` consists of 128 output lengths that give different hashes |
+| 0xb362 | skein1024-16   | |
+| 0xb363 | skein1024-24   | |
+| ...    |                | |
+| 0xb3df | skein1024-1016 | |
+| 0xb3e0 | skein1024-1024 | |
 
 ## Development
 
