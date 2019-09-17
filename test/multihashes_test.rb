@@ -9,7 +9,12 @@ class MultihashesTest < Minitest::Test
 
   def test_encodes_from_digest
     out = Multihashes.encode @sha1_digest, 'sha1'
-    assert_equal [0x11, 20, @sha1_digest].pack('CCA*'), out
+    assert_equal "\x11\x14#{@sha1_digest}".b, out
+  end
+
+  def test_encodes_from_digest_all_zero
+    out = Multihashes.encode ("\x00".b * 20), 'sha1'
+    assert_equal "\x11\x14#{"\x00".b * 20}".b, out
   end
 
   def test_decodes_from_multihash
@@ -18,6 +23,14 @@ class MultihashesTest < Minitest::Test
     assert_equal 'sha1', out[:hash_function]
     assert_equal 20, out[:length]
     assert_equal @sha1_digest, out[:digest]
+  end
+
+  def test_decodes_from_multihash_all_zero
+    out = Multihashes.decode "\x12\x20#{"\x00".b * 32}".b
+    assert_equal 0x12, out[:code]
+    assert_equal 'sha2-256', out[:hash_function]
+    assert_equal 32, out[:length]
+    assert_equal("\x00".b * 32, out[:digest])
   end
 
   def test_sha256_encode_decode
