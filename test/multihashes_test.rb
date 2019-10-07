@@ -41,4 +41,31 @@ class MultihashesTest < Minitest::Test
       Multihashes.decode(@sha256_digest)
     }
   end
+
+  def test_breaking_table_change_from_0_1_0
+    old_hardcoded_mapping_yay = {
+      0xd5 => 'md5',
+      0x11 => 'sha1',
+      0x12 => 'sha2-256',
+      0x13 => 'sha2-512',
+      # 0x14 => 'sha3', # this was renamed from sha3
+      # 0x40 => 'blake2b',
+      # 0x41 => 'blake2s'
+    }
+
+    old_hardcoded_mapping_yay.each do |code, name|
+      assert_equal Multihashes::TABLE[code], name
+    end
+
+    old_hardcoded_mapping_nay = {
+      0x14 => 'sha3', # this was renamed from sha3
+      0x40 => 'blake2b',
+      0x41 => 'blake2s'
+    }
+
+    old_hardcoded_mapping_nay.each do |code, name|
+      refute_equal Multihashes::TABLE[code], name
+    end
+
+  end
 end

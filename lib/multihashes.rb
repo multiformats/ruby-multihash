@@ -1,19 +1,14 @@
 require 'multihashes/version'
+require 'multicodecs'
 
 module Multihashes
   class HashFunctionNotImplemented < StandardError; end
   class DigestLengthError < StandardError; end
 
-  # https://github.com/jbenet/multihash
-  TABLE = {
-    0xd5 => 'md5',
-    0x11 => 'sha1',
-    0x12 => 'sha2-256',
-    0x13 => 'sha2-512',
-    0x14 => 'sha3',
-    0x40 => 'blake2b',
-    0x41 => 'blake2s'
-  }
+  # https://github.com/multiformats/multicodec/blob/master/table.csv
+  TABLE = Multicodecs.where(tag: 'multihash')
+    .map { |codec| [codec.code, codec.name] }
+    .to_h
 
   def self.encode(digest, hash_function)
     length = digest.bytesize
